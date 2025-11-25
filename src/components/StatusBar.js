@@ -1,22 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const StatusBar = ({ setStatus }) => {
+const StatusBar = () => {
+  const [status, setStatus] = useState("Checking...");
+
   useEffect(() => {
     const fetchStatus = async () => {
       try {
         const res = await axios.get(`${process.env.REACT_APP_API_URL}/status`);
-        setStatus(`Active Model Source: ${res.data.active_model_source}`);
-      } catch (err) {
-        setStatus("Server offline or misconfigured.");
+        setStatus(
+          `✅ Backend Active — Model: ${res.data.active_model_source} (${res.data.ollama_model})`
+        );
+      } catch {
+        setStatus("❌ Cannot reach backend");
       }
     };
     fetchStatus();
-  }, [setStatus]);
+  }, []);
 
   return (
-    <div className="alert alert-secondary mt-3">
-      <strong>System:</strong> Checking model status...
+    <div className="alert alert-secondary mt-3 text-center">
+      {status}
     </div>
   );
 };

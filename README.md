@@ -1,3 +1,10 @@
+# Steps
+- npx create-react-app demo-agentic-ai-frontend
+- cd demo-agentic-ai-frontend
+- npm install axios bootstrap
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

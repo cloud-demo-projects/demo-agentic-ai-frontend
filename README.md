@@ -3,6 +3,9 @@
 - cd demo-agentic-ai-frontend
 - npm install axios bootstrap
 
+## React Frontend
+- npx create-react-app health-frontend
+<img width="342" height="412" alt="image" src="https://github.com/user-attachments/assets/0b83177c-7f4a-4c30-bfc8-90c3639f22b8" />
 
 
 # Getting Started with Create React App
